@@ -202,10 +202,11 @@ h1 {
 @media (max-width: 600px) {
   .menu { padding: 15px 10px; margin: 10px; }
   h1 { font-size: 1em; }
-  .columns { gap: 12px; }
+  .columns { grid-template-columns: 1fr; gap: 0; }
   .section-title { font-size: 0.6em; }
   .item-name { font-size: 1em; }
   .item-price { font-size: 1em; }
   .item-desc { font-size: 0.85em; }
   .item { margin-bottom: 8px; }
+  .toolbar { padding: 8px 10px; flex-wrap: wrap; justify-content: center; }
 }

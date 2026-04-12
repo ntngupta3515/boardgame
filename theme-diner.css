@@ -149,14 +149,16 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  .menu { padding: 15px 10px; margin: 10px; }
+  .menu { padding: 15px 10px; margin: 10px; border-width: 5px; }
   h1 { font-size: 1.8em; }
-  .columns { gap: 12px; }
+  .columns { grid-template-columns: 1fr; gap: 0; }
   .section-title { font-size: 1.1em; }
   .item-name { font-size: 0.85em; }
   .item-price { font-size: 0.85em; }
   .item-desc { font-size: 0.7em; }
   .item { margin-bottom: 8px; }
+  .special { transform: none; }
+  .toolbar { padding: 8px 10px; flex-wrap: wrap; justify-content: center; }
 }
 
 .toolbar {
