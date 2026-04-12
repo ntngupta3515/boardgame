@@ -1,3 +1,14 @@
+const DEFAULT_THEME = 1;
+const THEMES = [{
+    STYLE: 'theme-diner.css',
+    LABEL: '🍔 Diner',
+    TITLE: '🎲 Game Night Diner 🎲',
+}, {
+    STYLE: 'theme-neon.css',
+    LABEL: '💜 Neon',
+    TITLE: '👾 Game Night Arcade 👾',
+}];
+
 const ID = {
     APP: 'app',
     THEME: 'theme',
@@ -23,11 +34,10 @@ const CLASS = {
     TAGLINE: 'tagline',
     FOOTER: 'footer',
     THEME_SWITCHER: 'theme-switcher',
+    MENU_TITLE: 'menu-title',
 };
 
 const CONFIG = {
-    THEMES: ['theme-diner.css', 'theme-neon.css'],
-    THEME_LABELS: ['🍔 Diner', '💜 Neon'],
     PAGE_HEIGHT: 700,
     SECTION_HEADER_HEIGHT: 40,
     SECTION_HEADER_WITH_DESC_HEIGHT: 60,

@@ -68,7 +68,7 @@ function render(playerCount) {
 		menuDiv.className = CLASS.MENU;
 		menuDiv.innerHTML = `
 			<div class="${CLASS.STAIN}"></div>
-			<h1>${CONFIG.TITLE}</h1>
+			<h1 class="${CLASS.MENU_TITLE}">${currentTitle}</h1>
 			<p class="${CLASS.SUBTITLE}">${CONFIG.SUBTITLE}</p>
 			<p class="${CLASS.TAGLINE}">${CONFIG.TAGLINE}</p>
 			${page === pages[0] && specials.length ? `
@@ -90,7 +90,7 @@ function render(playerCount) {
 
   if (!pages.length && !specials.length) {
     app.innerHTML = `<div class="${CLASS.MENU}">
-      <h1>${CONFIG.TITLE}</h1>
+      <h1 class="${CLASS.MENU_TITLE}">${currentTitle}</h1>
       <p class="${CLASS.SUBTITLE}" style="margin-top:20px">${CONFIG.EMPTY_MESSAGE}</p>
     </div>`;
   }
