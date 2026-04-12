@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎲 Game Night Diner 🎲</title>
+<link id="theme" rel="stylesheet" href="theme-diner.css">
+</head>
+<body>
+<div class="toolbar">
+  <div class="player-filter">
+    <label for="player-filter">👥 Players:</label>
+    <select id="player-filter"></select>
+  </div>
+  <button class="theme-switcher" onclick="toggleTheme()">🍔 Diner</button>
+</div>
+<div id="app"></div>
+<script>
+const themes = ['theme-diner.css', 'theme-neon.css'];
+const labels = ['🍔 Diner', '💜 Neon'];
+let current = 0;
+function toggleTheme() {
+  current = (current + 1) % themes.length;
+  document.getElementById('theme').setAttribute('href', themes[current]);
+  document.querySelector('.theme-switcher').textContent = labels[current];
+}
+</script>
+<script src="scripts/games.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>

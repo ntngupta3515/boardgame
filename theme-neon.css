@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+body {
+  margin: 0;
+  background: #1a0a2e;
+  font-family: 'VT323', monospace;
+  color: #00ff88;
+  min-height: 100vh;
+}
+
+.menu {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  border: 4px solid #ff00ff;
+  background: #0d0221;
+  box-shadow: 0 0 20px #ff00ff88, inset 0 0 20px #00ff8822;
+  position: relative;
+}
+
+.menu::before, .menu::after {
+  content: "▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░";
+  display: block;
+  text-align: center;
+  color: #ff00ff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 8px 0;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  font-size: 1.8em;
+  color: #ff6600;
+  text-shadow: 3px 3px 0 #ff00ff, -1px -1px 0 #00ffff;
+  margin: 10px 0 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.3em;
+  color: #00ffff;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1.1em;
+  color: #ff00ff;
+  margin-bottom: 20px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  color: #00ffff;
+  border-bottom: 2px solid #ff00ff;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 8px #00ffff88;
+}
+
+.section-title + .section-title,
+.item + .section-title {
+  margin-top: 20px;
+}
+
+.section-desc {
+  font-size: 1.1em;
+  color: #ff00ff;
+  margin: -8px 0 12px;
+}
+
+.menu + .menu {
+  margin-top: 40px;
+}
+
+.item { margin-bottom: 14px; }
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #ffff00;
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 2px dotted #ff00ff55;
+  margin: 0 6px;
+  position: relative;
+  top: -4px;
+}
+
+.item-price {
+  white-space: nowrap;
+  color: #ff6600;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.item-desc {
+  font-size: 1em;
+  color: #00ff8899;
+  margin-top: 2px;
+}
+
+.special {
+  border: 2px solid #ffff00;
+  padding: 12px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #1a0a2e;
+  box-shadow: 0 0 15px #ffff0066;
+}
+
+.special h3 {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffff00;
+  font-size: 0.9em;
+  margin: 0 0 4px;
+  text-shadow: 0 0 10px #ffff00;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #ff00ff88;
+}
+
+.stain {
+  display: none;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #1a0a2e;
+}
+
+.theme-switcher {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6em;
+  background: #ff00ff;
+  color: #0d0221;
+  border: none;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.theme-switcher:active { opacity: 0.7; }
+
+.player-filter {
+  font-family: 'VT323', monospace;
+  font-size: 1.1em;
+  color: #00ffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.player-filter select {
+  font-family: 'VT323', monospace;
+  background: #0d0221;
+  border: 2px solid #ff00ff;
+  color: #00ff88;
+  min-height: 44px;
+  padding: 4px 12px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.ideal-serving {
+  display: block;
+  font-size: 0.85em;
+  color: #ff00ff;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .menu { padding: 15px 10px; margin: 10px; }
+  h1 { font-size: 1em; }
+  .columns { gap: 12px; }
+  .section-title { font-size: 0.6em; }
+  .item-name { font-size: 1em; }
+  .item-price { font-size: 1em; }
+  .item-desc { font-size: 0.85em; }
+  .item { margin-bottom: 8px; }
+}
