@@ -41,9 +41,9 @@ function render(playerCount) {
 	const filters = getFilters();
 
 	// Collect specials that match player filter
-	const specials = (GAMES_DATA.specials || [])
-		.map(id => GAMES_DATA.games[id])
-    	.filter(({ id }) => gameFilter.filter(id, filters));
+	const specials = GAMES_DATA.specials.filter(
+		id => gameFilter.filter(id, filters)
+	).map(id => GAMES_DATA.games[id]);
 
 	// Build section blocks, skipping specials from regular listings
 	const blocks = [];

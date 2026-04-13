@@ -13,6 +13,7 @@ class GameFilter {
 
     filter(gameId, { playerCount, tags }) {
         const game = this.games[gameId];
+        console.log(`Filtering game ${gameId}:`, game, { playerCount, tags });
         if (!game) return false;
         return this.matchesPlayers(game, playerCount) && this.matchesTags(game, tags);
     }
