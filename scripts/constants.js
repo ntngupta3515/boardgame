@@ -1,10 +1,10 @@
 const DEFAULT_THEME = 1;
 const THEMES = [{
-    STYLE: 'theme-diner.css',
+    STYLE: 'styles/theme-diner.css',
     LABEL: '🍔 Diner',
     TITLE: '🎲 Game Night Diner 🎲',
 }, {
-    STYLE: 'theme-neon.css',
+    STYLE: 'styles/theme-neon.css',
     LABEL: '💜 Neon',
     TITLE: '👾 Game Night Arcade 👾',
 }];
@@ -30,7 +30,6 @@ const CLASS = {
     ITEM_NAME: 'item-name',
     ITEM_PRICE: 'item-price',
     ITEM_DESC: 'item-desc',
-    ITEM_META: 'item-meta',
     DOTS: 'dots',
     IDEAL_SERVING: 'ideal-serving',
     SPECIAL: 'special',
@@ -49,10 +48,10 @@ const CONFIG = {
     GAME_ITEM_HEIGHT: 50,
     MAX_PLAYERS: 16,
     TITLE: '🎲 Game Night Diner 🎲',
-    SUBTITLE: 'Est. 1994 \u2024; "Where Every Night is Game Night!"',
+    SUBTITLE: 'Est. 2024 \u2014 "Where Every Night is Game Night!"',
     TAGLINE: '⭐ All games served hot &amp; fresh to your table ⭐',
-    SPECIAL_HEADING: '🌟 Today\'s Blue Plate Special 🌟',
-    SPECIAL_HEADING_PLURAL: '🌟 Today\'s Blue Plate Specials 🌟',
+    SPECIAL_HEADING: '🌟 Today\'s Special 🌟',
+    SPECIAL_HEADING_PLURAL: '🌟 Today\'s Specials 🌟',
     IDEAL_PREFIX: 'Best served:',
     IDEAL_SUFFIX: 'players',
     FOOTER: 'No subtitutions. Management not responsible for lost friendships or flipped tables.<br>🎲 Dice rolls are final. 🎲',

@@ -1,6 +1,5 @@
 const app = document.getElementById(ID.APP);
-const data = GAMES_DATA;
-const specialIds = new Set(data.specials || []);
+const specialIds = new Set(GAMES_DATA.specials || []);
 
 function idealLabel(g) {
 	const val = g.ideal[0] === g.ideal[1] ? `${g.ideal[0]}` : `${g.ideal[0]}-${g.ideal[1]}`;
@@ -11,16 +10,16 @@ function render(playerCount) {
 	app.innerHTML = '';
 
 	// Collect specials that match player filter
-	const specials = (data.specials || [])
-		.map(id => data.games[id])
+	const specials = (GAMES_DATA.specials || [])
+		.map(id => GAMES_DATA.games[id])
     	.filter(g => g && (!playerCount || (playerCount >= g.players[0] && playerCount <= g.players[1])));
 
 	// Build section blocks, skipping specials from regular listings
 	const blocks = [];
-	for (const sec of data.sections) {
+	for (const sec of GAMES_DATA.sections) {
 		const games = [];
 		for (const id of sec.games) {
-			const g = data.games[id];
+			const g = GAMES_DATA.games[id];
 			if (!g || specialIds.has(id)) continue;
 			if (playerCount && (playerCount < g.players[0] || playerCount > g.players[1])) continue;
 			games.push(g);
@@ -55,7 +54,7 @@ function render(playerCount) {
 			<div class="${CLASS.ITEM_ROW}">
 				<span class="${CLASS.ITEM_NAME}">${g.name}</span><span class="${CLASS.DOTS}"></span><span class="${CLASS.ITEM_PRICE}">${g.time}</span>
 			</div>
-			<div class="${CLASS.ITEM_META}">
+			<div>
 				<span class="${CLASS.ITEM_DESC}">${g.desc}</span>
 				<span class="${CLASS.IDEAL_SERVING}">${idealLabel(g)}</span>
 			</div>

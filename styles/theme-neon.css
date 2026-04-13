@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --font-body: 'VT323', monospace;
+  --font-heading: 'Press Start 2P', cursive;
+  --bg: #1a0a2e;
+  --text: #00ff88;
+  --text-muted: #00ff8899;
+  --accent: #ff00ff;
+  --menu-bg: #0d0221;
+  --menu-border: 4px solid #ff00ff;
+  --menu-shadow: 0 0 20px #ff00ff88, inset 0 0 20px #00ff8822;
+  --heading-color: #ff6600;
+  --h1-size: 1.8em;
+  --h1-shadow: 3px 3px 0 #ff00ff, -1px -1px 0 #00ffff;
+  --tagline-size: 1.1em;
+  --section-size: 0.85em;
+  --section-color: #00ffff;
+  --section-border: 2px solid #ff00ff;
+  --desc-size: 1.1em;
+  --item-name-size: 1.4em;
+  --item-name-color: #ffff00;
+  --dots-border: 2px dotted #ff00ff55;
+  --price-color: #ff6600;
+  --price-size: 1.3em;
+  --item-desc-size: 1em;
+  --ideal-size: 0.85em;
+  --special-border: 2px solid #ffff00;
+  --special-bg: #1a0a2e;
+  --special-shadow: 0 0 15px #ffff0066;
+  --special-heading-color: #ffff00;
+  --special-heading-size: 0.9em;
+  --footer-size: 1em;
+  --stain-display: none;
+  --btn-bg: #ff00ff;
+  --btn-color: #0d0221;
+  --input-bg: #0d0221;
+  --switcher-size: 0.6em;
+  --filter-size: 1.1em;
+  --splash-h1-size: 1.6em;
+  --splash-p-size: 1.5em;
+  --splash-p-color: #00ffff;
+  --splash-select-size: 1.4em;
+  --splash-btn-size: 0.7em;
+}
+
+.menu::before, .menu::after {
+  content: "▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░ ▓▒░";
+  letter-spacing: 2px;
+}
+
+.section-title { padding-bottom: 6px; text-shadow: 0 0 8px #00ffff88; }
+.special h3 { text-shadow: 0 0 10px #ffff00; }
+.subtitle { color: #00ffff; font-size: 1.3em; }
+
+@media (max-width: 600px) {
+  :root {
+    --h1-size: 1em;
+    --section-size: 0.6em;
+    --item-name-size: 1em;
+    --price-size: 1em;
+    --item-desc-size: 0.85em;
+  }
+}

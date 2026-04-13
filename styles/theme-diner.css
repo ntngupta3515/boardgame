@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Special+Elite&display=swap');
+
+:root {
+  --font-body: 'Special Elite', cursive;
+  --font-heading: 'Lobster', cursive;
+  --bg: #f5e6c8;
+  --text: #3a1a0a;
+  --text-muted: #6b4226;
+  --accent: #8b0000;
+  --menu-bg: #fdf5e6;
+  --menu-border: 8px double #8b0000;
+  --menu-shadow: 4px 4px 0 #3a1a0a;
+  --heading-color: #8b0000;
+  --h1-size: 3.2em;
+  --h1-shadow: 2px 2px 0 #d4a017;
+  --tagline-size: 0.85em;
+  --section-size: 1.6em;
+  --section-color: #8b0000;
+  --section-border: 2px dashed #8b0000;
+  --desc-size: 0.85em;
+  --item-name-size: 1.1em;
+  --dots-border: 2px dotted #3a1a0a;
+  --price-color: #8b0000;
+  --item-desc-size: 0.82em;
+  --ideal-size: 0.75em;
+  --special-border: 3px solid #8b0000;
+  --special-bg: #fff8dc;
+  --special-transform: rotate(-1deg);
+  --special-heading-color: #8b0000;
+  --special-heading-size: 1.4em;
+  --footer-size: 0.85em;
+  --stain-bg: radial-gradient(circle, rgba(139,69,19,0.08) 0%, transparent 70%);
+  --btn-bg: #8b0000;
+  --btn-color: #fdf5e6;
+  --input-bg: #fdf5e6;
+  --switcher-size: 1em;
+  --filter-size: 0.9em;
+  --splash-h1-size: 2.8em;
+  --splash-p-size: 1.3em;
+  --splash-select-size: 1.2em;
+  --splash-btn-size: 1.2em;
+}
+
+.menu::before, .menu::after {
+  content: "✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦";
+  letter-spacing: 4px;
+}
+
+.subtitle { font-style: italic; }
+.item-desc { font-style: italic; }
+.section-desc { font-style: italic; }
+.ideal-serving { font-style: italic; }
+
+@media (max-width: 600px) {
+  :root {
+    --h1-size: 1.8em;
+    --section-size: 1.1em;
+    --item-name-size: 0.85em;
+    --item-desc-size: 0.7em;
+  }
+  .menu { border-width: 5px; }
+  .special { transform: none; }
+}
