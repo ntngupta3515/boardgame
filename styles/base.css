@@ -74,20 +74,18 @@ h1 {
 
 .footer { text-align: center; margin-top: 20px; font-size: var(--footer-size); color: var(--text-muted); }
 
-.stain {
-  position: absolute;
-  width: 80px; height: 80px; border-radius: 50%;
-  top: 60px; right: 40px; pointer-events: none;
-  background: var(--stain-bg, transparent);
-  display: var(--stain-display, block);
-}
-
 .toolbar { position: sticky; top: 0; z-index: 100; display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px 16px; background: var(--bg); }
 .theme-switcher { border: none; min-height: 44px; min-width: 44px; padding: 8px 16px; cursor: pointer; font-family: var(--font-heading); font-size: var(--switcher-size); background: var(--btn-bg); color: var(--btn-color); }
 .theme-switcher:active { opacity: 0.7; }
 
 .player-filter { display: flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: var(--filter-size); color: var(--text); }
 .player-filter select { min-height: 44px; padding: 4px 12px; font-size: 1em; cursor: pointer; font-family: var(--font-body); background: var(--input-bg); border: 2px solid var(--accent); color: var(--text); }
+
+.tag-filter { display: flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: var(--filter-size); color: var(--text); }
+#tag-filter { min-height: 44px; padding: 4px 12px; font-size: 1em; cursor: pointer; font-family: var(--font-body); background: var(--input-bg); border: 2px solid var(--accent); color: var(--text); }
+.active-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag-chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; min-height: 32px; cursor: pointer; border: none; border-radius: 16px; background: var(--accent); color: var(--btn-color); font-family: var(--font-body); font-size: 0.85em; }
+.tag-chip:active { opacity: 0.7; }
 
 .splash { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; font-family: var(--font-body); }
 .splash h1 { font-family: var(--font-heading); font-size: var(--splash-h1-size); color: var(--heading-color); text-shadow: var(--h1-shadow); }

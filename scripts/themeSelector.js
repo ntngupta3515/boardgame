@@ -11,4 +11,5 @@ function setTheme() {
     document.getElementById(ID.THEME).setAttribute('href', THEMES[currentTheme].STYLE);
     document.querySelector(`.${CLASS.THEME_SWITCHER}`).textContent = THEMES[currentTheme].LABEL;
     document.querySelectorAll(`.${CLASS.MENU_TITLE}`).forEach(el => el.textContent = currentTitle);
+    document.title = currentTitle;
 }

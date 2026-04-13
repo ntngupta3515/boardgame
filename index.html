@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>🎲 Game Night Diner 🎲</title>
 		<link rel="stylesheet" href="styles/base.css">
-		<link id="theme" rel="stylesheet">
+		<link rel="stylesheet" id="theme">
   	</head>
 
 	<body>
@@ -21,8 +20,12 @@
 		
 		<div id="main" style="display: none;">
 			<div class="toolbar">
+				<div class="tag-filter">
+					<div class="active-tags" id="active-tags"></div>
+					<select id="tag-filter" aria-label="Filter by tag"></select>
+				</div>
+
 				<div class="player-filter">
-					<label for="player-filter">👥 Players:</label>
 					<select id="player-filter" aria-label="Number of players"></select>
 				</div>
 				<button class="theme-switcher" onclick="toggleTheme()"></button>
@@ -34,6 +37,7 @@
 		<script src="scripts/themeSelector.js"></script>
 		<script src="scripts/start.js"></script>
 		<script src="scripts/games.js"></script>
+		<script src="scripts/filter.js"></script>
 		<script src="scripts/app.js"></script>
 
 	</body>

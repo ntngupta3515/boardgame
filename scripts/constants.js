@@ -17,7 +17,9 @@ const ID = {
     SPLASH: {
         DIV: 'splash',
         SELECT: 'splash-select',
-    }
+    },
+    TAG_FILTER: 'tag-filter',
+    ACTIVE_TAGS: 'active-tags',
 };
 
 const CLASS = {
@@ -33,7 +35,6 @@ const CLASS = {
     DOTS: 'dots',
     IDEAL_SERVING: 'ideal-serving',
     SPECIAL: 'special',
-    STAIN: 'stain',
     SUBTITLE: 'subtitle',
     TAGLINE: 'tagline',
     FOOTER: 'footer',
@@ -56,5 +57,5 @@ const CONFIG = {
     IDEAL_SUFFIX: 'players',
     FOOTER: 'No subtitutions. Management not responsible for lost friendships or flipped tables.<br>🎲 Dice rolls are final. 🎲',
     EMPTY_MESSAGE: 'No games available for that party size. Try a different group!',
-    FILTER_DEFAULT: 'Any',
+    FILTER_DEFAULT: 'Players: Any',
 }

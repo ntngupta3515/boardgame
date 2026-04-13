@@ -1,28 +1,58 @@
 const app = document.getElementById(ID.APP);
 const specialIds = new Set(GAMES_DATA.specials || []);
+const gameFilter = new GameFilter(GAMES_DATA.games);
+let activeTags = [];
 
 function idealLabel(g) {
 	const val = g.ideal[0] === g.ideal[1] ? `${g.ideal[0]}` : `${g.ideal[0]}-${g.ideal[1]}`;
 	return `${CONFIG.IDEAL_PREFIX} ${val} ${CONFIG.IDEAL_SUFFIX}`;
 }
 
+function getFilters() {
+	return { playerCount: selector.value ? parseInt(selector.value) : null, tags: activeTags };
+}
+
+function rebuildTagDropdown() {
+	const tagSelect = document.getElementById(ID.TAG_FILTER);
+	const allTags = gameFilter.getAllTags().filter(tag => !activeTags.includes(tag));
+	tagSelect.innerHTML = `<option value="">🏷️ Add tag...</option>`;
+	allTags.forEach(tag => tagSelect.innerHTML += `<option value="${tag}">${tag}</option>`);
+}
+
+function rebuildChips() {
+	const container = document.getElementById('active-tags');
+	container.innerHTML = '';
+	activeTags.forEach(tag => {
+		const chip = document.createElement('button');
+		chip.className = 'tag-chip';
+		chip.textContent = tag + ' ✕';
+		chip.addEventListener('click', () => {
+			activeTags = activeTags.filter(t => t !== tag);
+			rebuildTagDropdown();
+			rebuildChips();
+			render(getFilters().playerCount);
+		});
+		container.appendChild(chip);
+	});
+}
+
 function render(playerCount) {
 	app.innerHTML = '';
+	const filters = getFilters();
 
 	// Collect specials that match player filter
 	const specials = (GAMES_DATA.specials || [])
 		.map(id => GAMES_DATA.games[id])
-    	.filter(g => g && (!playerCount || (playerCount >= g.players[0] && playerCount <= g.players[1])));
+    	.filter(({ id }) => gameFilter.filter(id, filters));
 
 	// Build section blocks, skipping specials from regular listings
 	const blocks = [];
 	for (const sec of GAMES_DATA.sections) {
 		const games = [];
 		for (const id of sec.games) {
-			const g = GAMES_DATA.games[id];
-			if (!g || specialIds.has(id)) continue;
-			if (playerCount && (playerCount < g.players[0] || playerCount > g.players[1])) continue;
-			games.push(g);
+			if (specialIds.has(id)) continue;
+			if (!gameFilter.filter(id, filters)) continue;
+			games.push(GAMES_DATA.games[id]);
 		}
 		if (!games.length) continue;
 		const height = (sec.description ? CONFIG.SECTION_HEADER_WITH_DESC_HEIGHT : CONFIG.SECTION_HEADER_HEIGHT) + games.length * CONFIG.GAME_ITEM_HEIGHT;
@@ -66,7 +96,6 @@ function render(playerCount) {
 		const menuDiv = document.createElement('div');
 		menuDiv.className = CLASS.MENU;
 		menuDiv.innerHTML = `
-			<div class="${CLASS.STAIN}"></div>
 			<h1 class="${CLASS.MENU_TITLE}">${currentTitle}</h1>
 			<p class="${CLASS.SUBTITLE}">${CONFIG.SUBTITLE}</p>
 			<p class="${CLASS.TAGLINE}">${CONFIG.TAGLINE}</p>
@@ -100,5 +129,18 @@ const selector = document.getElementById(ID.PLAYER_FILTER);
 selector.innerHTML = `<option value="">${CONFIG.FILTER_DEFAULT}</option>`;
 for (let i = 1; i <= CONFIG.MAX_PLAYERS; i++) selector.innerHTML += `<option value="${i}">${i}</option>`;
 selector.addEventListener('change', () => render(selector.value ? parseInt(selector.value) : null));
+
+// Tag filter dropdown
+const tagSelect = document.getElementById(ID.TAG_FILTER);
+tagSelect.addEventListener('change', () => {
+	if (tagSelect.value) {
+		activeTags.push(tagSelect.value);
+		tagSelect.value = '';
+		rebuildTagDropdown();
+		rebuildChips();
+		render(getFilters().playerCount);
+	}
+});
+rebuildTagDropdown();
 
 render(selector.value ? parseInt(selector.value) : null);
