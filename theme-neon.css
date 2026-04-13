@@ -199,6 +199,53 @@ h1 {
   margin-top: 2px;
 }
 
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'VT323', monospace;
+}
+
+.splash h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.6em;
+  color: #ff6600;
+  text-shadow: 3px 3px 0 #ff00ff, -1px -1px 0 #00ffff;
+}
+
+.splash p {
+  font-size: 1.5em;
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+
+.splash-controls select {
+  font-family: 'VT323', monospace;
+  font-size: 1.4em;
+  min-height: 48px;
+  padding: 4px 16px;
+  background: #0d0221;
+  border: 2px solid #ff00ff;
+  color: #00ff88;
+  cursor: pointer;
+}
+
+.splash-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7em;
+  min-height: 48px;
+  padding: 8px 24px;
+  background: #ff00ff;
+  color: #0d0221;
+  border: none;
+  cursor: pointer;
+}
+
+.splash-button:active { opacity: 0.7; }
+
 @media (max-width: 600px) {
   .menu { padding: 15px 10px; margin: 10px; }
   h1 { font-size: 1em; }

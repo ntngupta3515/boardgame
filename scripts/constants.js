@@ -13,6 +13,11 @@ const ID = {
     APP: 'app',
     THEME: 'theme',
     PLAYER_FILTER: 'player-filter',
+    MAIN: 'main',
+    SPLASH: {
+        DIV: 'splash',
+        SELECT: 'splash-select',
+    }
 };
 
 const CLASS = {

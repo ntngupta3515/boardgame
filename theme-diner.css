@@ -214,3 +214,49 @@ h1 {
   font-style: italic;
   margin-top: 2px;
 }
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+}
+
+.splash h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.8em;
+  color: #8b0000;
+  text-shadow: 2px 2px 0 #d4a017;
+}
+
+.splash p {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.splash-controls select {
+  font-family: 'Special Elite', cursive;
+  font-size: 1.2em;
+  min-height: 48px;
+  padding: 4px 16px;
+  background: #fdf5e6;
+  border: 2px solid #8b0000;
+  color: #3a1a0a;
+  cursor: pointer;
+}
+
+.splash-button {
+  font-family: 'Lobster', cursive;
+  font-size: 1.2em;
+  min-height: 48px;
+  padding: 8px 24px;
+  background: #8b0000;
+  color: #fdf5e6;
+  border: none;
+  cursor: pointer;
+}
+
+.splash-button:active { opacity: 0.7; }

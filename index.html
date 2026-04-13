@@ -9,18 +9,29 @@
 
 	<body>
 
-		<div class="toolbar">
-			<div class="player-filter">
-				<label for="player-filter">👥 Players:</label>
-				<select id="player-filter" aria-label="Number of players"></select>
+		<div id="splash" class="splash">
+			<h1>🎲 Welcome to Game Night! 🎲</h1>
+			<p>How many players at your table?</p>
+			<div class="splash-controls">
+				<select id="splash-select" aria-label="Number of players"></select>
+				<button class="splash-button" onclick="startMenu()">Let's Play!</button>
 			</div>
-			<button class="theme-switcher" onclick="toggleTheme()"></button>
 		</div>
-
-	    <div id="app"></div>
+		
+		<div id="main" style="display: none;">
+			<div class="toolbar">
+				<div class="player-filter">
+					<label for="player-filter">👥 Players:</label>
+					<select id="player-filter" aria-label="Number of players"></select>
+				</div>
+				<button class="theme-switcher" onclick="toggleTheme()"></button>
+			</div>
+		    <div id="app"></div>
+		</div>
     
 		<script src="scripts/constants.js"></script>
 		<script src="scripts/themeSelector.js"></script>
+		<script src="scripts/start.js"></script>
 		<script src="scripts/games.js"></script>
 		<script src="scripts/app.js"></script>
 

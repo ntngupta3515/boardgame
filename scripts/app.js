@@ -102,4 +102,4 @@ selector.innerHTML = `<option value="">${CONFIG.FILTER_DEFAULT}</option>`;
 for (let i = 1; i <= CONFIG.MAX_PLAYERS; i++) selector.innerHTML += `<option value="${i}">${i}</option>`;
 selector.addEventListener('change', () => render(selector.value ? parseInt(selector.value) : null));
 
-render(null);
+render(selector.value ? parseInt(selector.value) : null);
