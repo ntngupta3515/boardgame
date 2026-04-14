@@ -36,6 +36,14 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("mousemove", (e) => {
+    createCells(e);
+});
+
+window.addEventListener("touchmove", (e) => {
+    createCells(e);
+});
+
+function createCells(e) {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 
@@ -45,7 +53,7 @@ window.addEventListener("mousemove", (e) => {
         cell.lastTouched = Date.now();
         cell.fading = false;
     }
-});
+}
 
 function drawGrid() {
     ctx.clearRect(0, 0, width, height);
