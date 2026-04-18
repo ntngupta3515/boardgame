@@ -54,7 +54,7 @@ const GAMES_DATA = {
 		{
 			"title": "🔥 All-Night Specials",
 			"description": "Clear your schedule",
-			"games": ["heat", "betrayal", "1961"]
+			"games": ["heat", "betrayal", "1961", "last_of_us"]
 		},
 		{
 			"title": "🐉 Epic Quests",
