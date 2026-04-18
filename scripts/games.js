@@ -534,6 +534,14 @@ const GAMES_DATA = {
 			"players": [2, 2], 
 			"ideal": [2, 2], 
 			"tags": [TAGS.TWO_PLAYER, TAGS.STRATEGY, TAGS.CARD, TAGS.BLUFFING] 
+		},
+		"last_of_us": { 
+			"name": "The Last of Us: Escape the Dark", 
+			"time": "120 min", 
+			"desc": "Survival horror adventure in the world of The Last of Us. Scavenge, fight, and make tough choices together.", 
+			"players": [1, 5], 
+			"ideal": [1, 5], 
+			"tags": [TAGS.HORROR, TAGS.CARD, TAGS.COOP, TAGS.ROUTE] 
 		}
 	}
 };
